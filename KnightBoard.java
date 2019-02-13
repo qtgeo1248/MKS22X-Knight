@@ -6,5 +6,6 @@ public class KnightBoard {
         if (startingRows <= 0 || startingCols <= 0) {
             throw new IllegalArgumentException();
         }
+        board = new int[startingRows][startingCols];
     }
 }
