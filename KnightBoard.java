@@ -1,7 +1,7 @@
 public class KnightBoard {
 
-    int[][] board;
-    boolean isBlank; //this records whether the board is nonempty or not
+    public int[][] board;
+    public boolean isBlank; //this records whether the board is nonempty or not
 
     public KnightBoard(int startingRows, int startingCols) {
         if (startingRows <= 0 || startingCols <= 0) {
