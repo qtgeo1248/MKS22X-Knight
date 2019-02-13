@@ -28,7 +28,7 @@ public class KnightBoard {
         } else { //this does the case when solve or countSols have been called
             for (int i = 0; i < board.length; i++) {
                 for (int j = 0; j < board[i].length; j++) {
-                    if (board[i][j] / 10 > 0) { //this does the single digit case
+                    if (board[i][j] / 10 < 0) { //this does the single digit case
                         ans += " " + board[i][j] + " ";
                     } else { //this does the double digit case
                         ans += board[i][j] + " ";
