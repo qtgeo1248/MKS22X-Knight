@@ -30,6 +30,8 @@ public class KnightBoard {
                 for (int j = 0; j < board[i].length; j++) {
                     if (board[i][j] / 10 > 0) { //this does the single digit case
                         ans += " " + board[i][j] + " ";
+                    } else { //this does the double digit case
+                        ans += board[i][j] + " ";
                     }
                 }
             }
