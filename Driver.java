@@ -5,6 +5,20 @@ public class Driver {
         test = new KnightBoard(10, 4);
         System.out.println(test + "\n");
 
+        try {
+            test = new KnightBoard(3, 0);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception Caught!\n");
+        } try {
+            test = new KnightBoard(-4, 3);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception Caught!\n");
+        } try {
+            test = new KnightBoard(0, -4);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception Caught!\n");
+        }
+
         /*
         test.board[0][0] = 4;
         test.board[0][3] = 23;
