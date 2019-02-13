@@ -43,4 +43,7 @@ public class KnightBoard {
     public boolean solve(int startingRow, int startingCol) {
         return true;
     }
+    public boolean solveH(int row, int col, int level) {//MAKE PRIVATE LATER
+        return true;
+    }
 }
