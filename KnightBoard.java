@@ -23,6 +23,7 @@ public class KnightBoard {
                 for (int j = 0; j < board[i].length; j++) {
                     ans += "__ ";
                 }
+                ans = ans.substring(0, ans.length() - 1) + "\n";
             }
         } else {
             for (int i = 0; i < board.length; i++) {
