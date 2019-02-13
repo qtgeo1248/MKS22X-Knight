@@ -18,17 +18,19 @@ public class KnightBoard {
 
     public String toString() {
         String ans = "";
-        if (isBlank) {
+        if (isBlank) { //this does the case when the board is blank
             for (int i = 0; i < board.length; i++) {
                 for (int j = 0; j < board[i].length; j++) {
                     ans += "__ ";
                 }
                 ans = ans.substring(0, ans.length() - 1) + "\n";
             }
-        } else {
+        } else { //this does the case when solve or countSols have been called
             for (int i = 0; i < board.length; i++) {
                 for (int j = 0; j < board[i].length; j++) {
-
+                    if (board[i][j] / 10 > 0) { //this does the single digit case
+                        ans += " " + board[i][j] + " ";
+                    }
                 }
             }
         }
