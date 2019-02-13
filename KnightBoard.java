@@ -23,7 +23,7 @@ public class KnightBoard {
                 for (int j = 0; j < board[i].length; j++) {
                     ans += "__ ";
                 }
-                ans = ans.substring(0, ans.length() - 1) + "\n";
+                ans = ans.substring(0, ans.length() - 1) + "\n"; //this removes the extra space
             }
         } else { //this does the case when solve or countSols have been called
             for (int i = 0; i < board.length; i++) {
@@ -34,8 +34,9 @@ public class KnightBoard {
                         ans += board[i][j] + " ";
                     }
                 }
+                ans = ans.substring(0, ans.length() - 1) + "\n"; //this removes extra space
             }
         }
-        return ans;
+        return ans.substring(0, ans.length()); //this removes the extra line
     }
 }
