@@ -37,6 +37,6 @@ public class KnightBoard {
                 ans = ans.substring(0, ans.length() - 1) + "\n"; //this removes extra space
             }
         }
-        return ans.substring(0, ans.length()); //this removes the extra line
+        return ans.substring(0, ans.length() - 1); //this removes the extra line
     }
 }
