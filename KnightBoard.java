@@ -19,10 +19,14 @@ public class KnightBoard {
     public String toString() {
         String ans = "";
         if (isBlank) {
-
+            for (int i = 0; i < board.length; i++) {
+                for (int j = 0; j < board[i].length; j++) {
+                    ans += "__ ";
+                }
+            }
         } else {
             for (int i = 0; i < board.length; i++) {
-                for (int j = 0; j < board.length; j++) {
+                for (int j = 0; j < board[i].length; j++) {
 
                 }
             }
