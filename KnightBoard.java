@@ -1,7 +1,7 @@
 public class KnightBoard {
 
     int[][] board;
-    boolean isBlank;
+    boolean isBlank; //this records whether the board is nonempty or not
 
     public KnightBoard(int startingRows, int startingCols) {
         if (startingRows <= 0 || startingCols <= 0) {
@@ -38,5 +38,9 @@ public class KnightBoard {
             }
         }
         return ans.substring(0, ans.length() - 1); //this removes the extra line
+    }
+
+    public boolean solve(int startingRow, int startingCol) {
+        return true;
     }
 }
