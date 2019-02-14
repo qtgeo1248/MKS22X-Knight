@@ -47,12 +47,14 @@ public class KnightBoard {
         if (level == 26) {
             return true;
         } else {
-            if (row < 0 || row >= board.length || col < 0 || col >= board[0].length || board[row][col] != 0) {
+            if (row < 0 || row >= board.length ||
+                col < 0 || col >= board[0].length || //these test if the knight is out of board
+                board[row][col] != 0) { //this tests if the knight is moved to a place already stepped on
                 return false;
             } else {
                 board[row][col] = level;
-                boolean toReturn = solveH(row + 2, col - 1, level + 1) ||
-                                   solveH(row + 2, col + 1, level + 1) ||
+                boolean toReturn = solveH(row + 2, col - 1, level + 1) || //tests every possible
+                                   solveH(row + 2, col + 1, level + 1) || //move of the knight
                                    solveH(row - 2, col - 1, level + 1) ||
                                    solveH(row - 2, col + 1, level + 1) ||
                                    solveH(row + 1, col - 2, level + 1) ||
@@ -60,9 +62,9 @@ public class KnightBoard {
                                    solveH(row - 1, col - 2, level + 1) ||
                                    solveH(row - 1, col + 2, level + 1);
                 if (!toReturn) {
-                    board[row][col] = 0;
+                    board[row][col] = 0; //changes back to 0 if no possibilities
                 }
-                isBlank = toReturn;
+                isBlank = toReturn; //changes isblank for the tostring
                 return toReturn;
             }
         }
