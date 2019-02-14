@@ -51,6 +51,14 @@ public class KnightBoard {
                 return false;
             } else {
                 board[row][col] = level;
+                boolean toReturn = solveH(row + 2, col - 2, level + 1) ||
+                                   solveH(row + 2, col + 2, level + 1) ||
+                                   solveH(row - 2, col - 2, level + 1) ||
+                                   solveH(row - 2, col + 2, level + 1) ||
+                                   solveH(row + 1, col - 2, level + 1) ||
+                                   solveH(row + 1, col + 2, level + 1) ||
+                                   solveH(row - 1, col - 2, level + 1) ||
+                                   solveH(row - 1, col + 2, level + 1);
             }
         }
     }
