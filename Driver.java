@@ -49,5 +49,27 @@ public class Driver {
         System.out.println(test.solve(4, 2));
         System.out.println(test + "\n");
         */
+
+        try {
+            test.solve(0, 0);
+        } catch (IllegalStateException e) {
+            System.out.println("Exception Caught!\n");
+        } try {
+            test = new KnightBoard(5, 5);
+            test.solve(0, 0);
+            test.solve(0, 0);
+        } catch (IllegalStateException e) {
+            System.out.println("Exception Caught!\n");
+        } try {
+            test = new KnightBoard(5, 5);
+            test.solve(2, -4);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception Caught!\n");
+        } try {
+            test = new KnightBoard(5, 5);
+            test.solve(-4, 2);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception Caught!\n");
+        }
     }
 }
