@@ -50,7 +50,7 @@ public class KnightBoard {
             if (row <= 0 || row >= board.length || col <= 0 || col >= board[0].length || board[row][col] != 0) {
                 return false;
             } else {
-                return
+                board[row][col] = level;
             }
         }
     }
