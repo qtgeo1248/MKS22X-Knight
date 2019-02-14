@@ -62,6 +62,7 @@ public class KnightBoard {
                 if (!toReturn) {
                     board[row][col] = 0;
                 }
+                isBlank = toReturn;
                 return toReturn;
             }
         }
