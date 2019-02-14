@@ -41,9 +41,13 @@ public class KnightBoard {
     }
 
     public boolean solve(int startingRow, int startingCol) {
-        return true;
+        return solve(startingRow, startingCol, 1);
     }
     public boolean solveH(int row, int col, int level) {//MAKE PRIVATE LATER
-        return true;
+        if (level == 26) {
+            return true;
+        } else {
+            
+        }
     }
 }
