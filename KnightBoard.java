@@ -41,6 +41,11 @@ public class KnightBoard {
     }
 
     public boolean solve(int startingRow, int startingCol) {
+        if (!isBlank){
+            throw new IllegalStateException();
+        } if (startingRow < 0 || startingCol < 0) {
+            throw new IllegalArgumentException();
+        }
         return solveH(startingRow, startingCol, 1);
     }
     public boolean solveH(int row, int col, int level) {//MAKE PRIVATE LATER
