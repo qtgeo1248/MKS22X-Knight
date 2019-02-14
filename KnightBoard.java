@@ -1,7 +1,7 @@
 public class KnightBoard {
 
-    public int[][] board;
-    public boolean isBlank; //this records whether the board is nonempty or not
+    private int[][] board;
+    private boolean isBlank; //this records whether the board is nonempty or not
 
     public KnightBoard(int startingRows, int startingCols) {
         if (startingRows <= 0 || startingCols <= 0) {
@@ -48,7 +48,7 @@ public class KnightBoard {
         }
         return solveH(startingRow, startingCol, 1);
     }
-    public boolean solveH(int row, int col, int level) {//MAKE PRIVATE LATER
+    private boolean solveH(int row, int col, int level) {//MAKE PRIVATE LATER
         if (level == board.length * board[0].length + 1) {
             return true;
         } else {
