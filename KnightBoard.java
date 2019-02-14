@@ -59,6 +59,10 @@ public class KnightBoard {
                                    solveH(row + 1, col + 2, level + 1) ||
                                    solveH(row - 1, col - 2, level + 1) ||
                                    solveH(row - 1, col + 2, level + 1);
+                if (!toReturn) {
+                    board[row][col] = 0;
+                }
+                return toReturn;
             }
         }
     }
