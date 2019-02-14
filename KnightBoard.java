@@ -64,7 +64,7 @@ public class KnightBoard {
                 if (!toReturn) {
                     board[row][col] = 0; //changes back to 0 if no possibilities
                 }
-                isBlank = toReturn; //changes isblank for the tostring
+                isBlank = !toReturn; //changes isblank for the tostring
                 return toReturn;
             }
         }
