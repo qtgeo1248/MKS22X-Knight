@@ -27,9 +27,23 @@ public class Driver {
         */
         test = new KnightBoard(5, 5);
         System.out.println(test.solve(0, 0));
-        System.out.println("isBlank " + test.isBlank);
-        System.out.println(test);
+        //System.out.println("isBlank " + test.isBlank);
+        System.out.println(test + "\n");
 
-
+        test = new KnightBoard(5, 5);
+        System.out.println(test.solve(0, 0));
+        System.out.println(test + "\n");
+        test = new KnightBoard(3, 3);
+        System.out.println(test.solve(0, 0));
+        System.out.println(test + "\n");
+        test = new KnightBoard(10, 2);
+        System.out.println(test.solve(0, 0));
+        System.out.println(test + "\n");
+        test = new KnightBoard(1, 1);
+        System.out.println(test.solve(0, 0));
+        System.out.println(test + "\n");
+        test = new KnightBoard(8, 5);
+        System.out.println(test.solve(4, 2));
+        System.out.println(test + "\n");
     }
 }

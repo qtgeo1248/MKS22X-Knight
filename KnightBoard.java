@@ -44,7 +44,7 @@ public class KnightBoard {
         return solveH(startingRow, startingCol, 1);
     }
     public boolean solveH(int row, int col, int level) {//MAKE PRIVATE LATER
-        if (level == 26) {
+        if (level == board.length * board[0].length + 1) {
             return true;
         } else {
             if (row < 0 || row >= board.length ||
