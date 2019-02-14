@@ -36,14 +36,18 @@ public class Driver {
         test = new KnightBoard(3, 3);
         System.out.println(test.solve(0, 0));
         System.out.println(test + "\n");
+        System.out.println(test.solve(1, 0));
+        System.out.println(test + "\n");
         test = new KnightBoard(10, 2);
         System.out.println(test.solve(0, 0));
         System.out.println(test + "\n");
         test = new KnightBoard(1, 1);
         System.out.println(test.solve(0, 0));
         System.out.println(test + "\n");
+        /* this is literally too long to keep testing everytime
         test = new KnightBoard(8, 5);
         System.out.println(test.solve(4, 2));
         System.out.println(test + "\n");
+        */
     }
 }
