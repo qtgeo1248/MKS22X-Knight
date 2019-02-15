@@ -48,8 +48,8 @@ public class KnightBoard {
         }
         return solveH(startingRow, startingCol, 1);
     }
-    private boolean solveH(int row, int col, int level) {//MAKE PRIVATE LATER
-        if (level == board.length * board[0].length + 1) {
+    private boolean solveH(int row, int col, int moveNumber) {//MAKE PRIVATE LATER
+        if (moveNumber == board.length * board[0].length + 1) {
             return true;
         } else {
             if (row < 0 || row >= board.length ||
@@ -57,15 +57,15 @@ public class KnightBoard {
                 board[row][col] != 0) { //this tests if the knight is moved to a place already stepped on
                 return false;
             } else {
-                board[row][col] = level;
-                boolean toReturn = solveH(row + 2, col - 1, level + 1) || //tests every possible
-                                   solveH(row + 2, col + 1, level + 1) || //move of the knight
-                                   solveH(row - 2, col - 1, level + 1) ||
-                                   solveH(row - 2, col + 1, level + 1) ||
-                                   solveH(row + 1, col - 2, level + 1) ||
-                                   solveH(row + 1, col + 2, level + 1) ||
-                                   solveH(row - 1, col - 2, level + 1) ||
-                                   solveH(row - 1, col + 2, level + 1);
+                board[row][col] = moveNumber;
+                boolean toReturn = solveH(row + 2, col - 1, moveNumber + 1) || //tests every possible
+                                   solveH(row + 2, col + 1, moveNumber + 1) || //move of the knight
+                                   solveH(row - 2, col - 1, moveNumber + 1) ||
+                                   solveH(row - 2, col + 1, moveNumber + 1) ||
+                                   solveH(row + 1, col - 2, moveNumber + 1) ||
+                                   solveH(row + 1, col + 2, moveNumber + 1) ||
+                                   solveH(row - 1, col - 2, moveNumber + 1) ||
+                                   solveH(row - 1, col + 2, moveNumber + 1);
                 if (!toReturn) {
                     board[row][col] = 0; //changes back to 0 if no possibilities
                 }
@@ -81,6 +81,9 @@ public class KnightBoard {
         } if (startingRow < 0 || startingRow >= board.length || startingCol < 0 || startingCol >= board[0].length) {
             throw new IllegalArgumentException();
         }
+        return 0; //temp
+    }
+    private int countSolutions(int startingRow, int startingCol, int moveNumber) {
         return 0; //temp
     }
 }
