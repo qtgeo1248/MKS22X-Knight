@@ -81,7 +81,7 @@ public class KnightBoard {
         } if (startingRow < 0 || startingRow >= board.length || startingCol < 0 || startingCol >= board[0].length) {
             throw new IllegalArgumentException();
         }
-        return 0; //temp
+        return countH(startingRow, startingRow, 1); //temp
     }
     private int countH(int row, int col, int moveNumber) {
         if (moveNumber == board.length * board[0].length + 1) { //base case when you have completed the tour
