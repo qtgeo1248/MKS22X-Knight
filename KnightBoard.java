@@ -43,7 +43,7 @@ public class KnightBoard {
     public boolean solve(int startingRow, int startingCol) {
         if (!isBlank){
             throw new IllegalStateException();
-        } if (startingRow < 0 || startingCol < 0) {
+        } if (startingRow < 0 || startingRow >= board.length || startingCol < 0 || startingCol >= board[0].length) {
             throw new IllegalArgumentException();
         }
         return solveH(startingRow, startingCol, 1);
@@ -78,9 +78,9 @@ public class KnightBoard {
     public int countSolutions(int startingRow, int startingCol) {
         if (!isBlank){
             throw new IllegalStateException();
-        } if (startingRow < 0 || startingCol < 0) {
+        } if (startingRow < 0 || startingRow >= board.length || startingCol < 0 || startingCol >= board[0].length) {
             throw new IllegalArgumentException();
         }
-        return true; //temp
+        return 0; //temp
     }
 }
