@@ -98,6 +98,17 @@ public class Driver {
             System.out.println("Exception Caught1!\n");
         }
 
-
+        test = new KnightBoard(3, 3);
+        int total = 0;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                total += test.countSolutions(i, j);
+            }
+        }
+        System.out.println(test);
+        System.out.println(total + "\n");
+        test = new KnightBoard(1, 1);
+        total = test.countSolutions(0, 0);
+        System.out.println(total + "\n");
     }
 }
