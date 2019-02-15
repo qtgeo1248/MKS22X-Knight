@@ -83,9 +83,15 @@ public class KnightBoard {
         }
         return 0; //temp
     }
-    private int countSolutions(int startingRow, int startingCol, int moveNumber) {
+    private int countSolutions(int row, int col, int moveNumber) {
         if (moveNumber == board.length * board[0].length + 1) { //base case when you have completed the tour
             return 1;
+        } else {
+            if (row < 0 || row >= board.length ||
+                col < 0 || col >= board[0].length || //these test if the knight is out of board
+                board[row][col] != 0) { //this tests if the knight is moved to a place already stepped on
+                return 0;
+            }
         }
         return 0; //temp
     }
