@@ -81,28 +81,32 @@ public class KnightBoard {
         } if (startingRow < 0 || startingRow >= board.length || startingCol < 0 || startingCol >= board[0].length) {
             throw new IllegalArgumentException();
         }
+        if (board.length == 1 && board[0].length == 1) {
+            return 1;
+        }
         return countH(startingRow, startingRow, 1); //temp
     }
     private int countH(int row, int col, int moveNumber) {
-        if (row < 0 || row >= board.length ||
-            col < 0 || col >= board[0].length || //these test if the knight is out of board
-            board[row][col] != 0) { //this tests if the knight is moved to a place already stepped on
-            return 0;
-        } else if (moveNumber == board.length * board[0].length + 1) { //base case when you have completed the tour
+        if (moveNumber == board.length * board[0].length + 1) { //base case when you have completed the tour
             return 1;
         } else {
-            board[row][col] = moveNumber;
-            int toReturn = countH(row + 2, col - 1, moveNumber + 1) + //tests every possible
-                           countH(row + 2, col + 1, moveNumber + 1) + //move of the knight
-                           countH(row - 2, col - 1, moveNumber + 1) +
-                           countH(row - 2, col + 1, moveNumber + 1) +
-                           countH(row + 1, col - 2, moveNumber + 1) +
-                           countH(row + 1, col + 2, moveNumber + 1) +
-                           countH(row - 1, col - 2, moveNumber + 1) +
-                           countH(row - 1, col + 2, moveNumber + 1);
-            board[row][col] = 0; //after you finish all possibilities, backtrack
-            return toReturn; //changing isBlank is unnecessary
-
+            if (row < 0 || row >= board.length ||
+                col < 0 || col >= board[0].length || //these test if the knight is out of board
+                board[row][col] != 0) { //this tests if the knight is moved to a place already stepped on
+                return 0;
+            } else {
+                board[row][col] = moveNumber;
+                int toReturn = countH(row + 2, col - 1, moveNumber + 1) + //tests every possible
+                               countH(row + 2, col + 1, moveNumber + 1) + //move of the knight
+                               countH(row - 2, col - 1, moveNumber + 1) +
+                               countH(row - 2, col + 1, moveNumber + 1) +
+                               countH(row + 1, col - 2, moveNumber + 1) +
+                               countH(row + 1, col + 2, moveNumber + 1) +
+                               countH(row - 1, col - 2, moveNumber + 1) +
+                               countH(row - 1, col + 2, moveNumber + 1);
+                board[row][col] = 0; //after you finish all possibilities, backtrack
+                return toReturn; //changing isBlank is unnecessary
+            }
         }
     }
 }
