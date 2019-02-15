@@ -83,7 +83,7 @@ public class KnightBoard {
         }
         return 0; //temp
     }
-    private int countSolutions(int row, int col, int moveNumber) {
+    private int countH(int row, int col, int moveNumber) {
         if (moveNumber == board.length * board[0].length + 1) { //base case when you have completed the tour
             return 1;
         } else {
@@ -92,16 +92,18 @@ public class KnightBoard {
                 board[row][col] != 0) { //this tests if the knight is moved to a place already stepped on
                 return 0;
             } else {
-                int toReturn = solveH(row + 2, col - 1, moveNumber + 1) + //tests every possible
-                               solveH(row + 2, col + 1, moveNumber + 1) + //move of the knight
-                               solveH(row - 2, col - 1, moveNumber + 1) +
-                               solveH(row - 2, col + 1, moveNumber + 1) +
-                               solveH(row + 1, col - 2, moveNumber + 1) +
-                               solveH(row + 1, col + 2, moveNumber + 1) +
-                               solveH(row - 1, col - 2, moveNumber + 1) +
-                               solveH(row - 1, col + 2, moveNumber + 1);
+                board[row][col] = moveNumber;
+                int toReturn = countH(row + 2, col - 1, moveNumber + 1) + //tests every possible
+                               countH(row + 2, col + 1, moveNumber + 1) + //move of the knight
+                               countH(row - 2, col - 1, moveNumber + 1) +
+                               countH(row - 2, col + 1, moveNumber + 1) +
+                               countH(row + 1, col - 2, moveNumber + 1) +
+                               countH(row + 1, col + 2, moveNumber + 1) +
+                               countH(row - 1, col - 2, moveNumber + 1) +
+                               countH(row - 1, col + 2, moveNumber + 1);
+                board[row][col] = 0; //after you finish all possibilities, backtrack
+                return toReturn; //changing isBlank is unnecessary
             }
         }
-        return 0; //temp
     }
 }
