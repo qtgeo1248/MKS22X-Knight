@@ -106,6 +106,7 @@ public class KnightBoard {
            PPPPS, I hope this goes in to some world record or Stuy record for longest useful comment ever
            PPPPPS, Now I actually hope you don't read this at all and you don't actually read our code when grading labs
                    because it's getting ridiculously long and embarrassing
+           PPPPPPS, Happy Valentine's Day!! (as of the time I wrote this comment)
         */
     }
     private int countH(int row, int col, int moveNumber) {
