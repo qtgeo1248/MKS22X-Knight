@@ -48,8 +48,8 @@ public class KnightBoard {
         }
         return solveH(startingRow, startingCol, 1);
     }
-    private boolean solveH(int row, int col, int moveNumber) {//MAKE PRIVATE LATER
-        if (moveNumber == board.length * board[0].length + 1) {
+    private boolean solveH(int row, int col, int moveNumber) {
+        if (moveNumber == board.length * board[0].length + 1) { //base case when you have completed tour
             return true;
         } else {
             if (row < 0 || row >= board.length ||
@@ -84,6 +84,9 @@ public class KnightBoard {
         return 0; //temp
     }
     private int countSolutions(int startingRow, int startingCol, int moveNumber) {
+        if (moveNumber == board.length * board[0].length + 1) { //base case when you have completed the tour
+            return 1;
+        }
         return 0; //temp
     }
 }
