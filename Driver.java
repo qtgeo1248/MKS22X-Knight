@@ -110,8 +110,8 @@ public class Driver {
         test = new KnightBoard(1, 1);
         System.out.println(test.countSolutions(0, 0) + "\n");
         test = new KnightBoard(5, 5);
-        System.out.println(test.countSolutions(0, 0) + "\n");
+        System.out.println(test.countSolutions(0, 0) + "\n"); //tested this case with THE Vincent Fongtastic
         test = new KnightBoard(3, 4);
-        System.out.println(test.countSolutions(0, 0) + "\n");
+        System.out.println(test.countSolutions(0, 0) + "\n"); //tested this case with THE stuyVincent Fong
     }
 }
