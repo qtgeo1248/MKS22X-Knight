@@ -84,7 +84,29 @@ public class KnightBoard {
         if (board.length == 1 && board[0].length == 1) {
             return 1;
         }
-        return countH(startingRow, startingRow, 1); //temp
+        return countH(startingRow, startingRow, 1) / 8;
+        /* okay so be prepared for the longest comment you ever read MR. KONSTANTINOVICH because it's
+           about to be THE longest comment ever so here's the mathematical reason why I divide by 8:
+           whenever I reach the last step of a VALID TOUR, I call the recursive step one more time.
+           Would you that if I move the knight to ANY space on the board after the last step of a tour,
+           the knight would move either to an invalid spot, or to a spot it has already reached? However,
+           due to the lack of my coding abilities, I am unable to code the fact that if i'm at the last step,
+           check if it's valid and then return 1, so I am forced to call the recursive step one more time.
+           By doing so, I multiply the number of solutions by 8, since every step after the ending of a
+           knight's tour would create an invalid solution (which my code would return as a valid solution),
+           and also due to the fact that technically, a knight always has 8 spots to move (whether the spot
+           is on the board is valid is a different question itself). Therefore, I overcounted by a factor
+           of 8 with my recursive calls. So therefore, I'm dividing by 8 by my solution to get the correct solution
+
+           PS, tl;dr: I explained why I divided by 8
+           PPS, I'm sorry you have had to read this massive comment which probably added like 15 lines to my code
+                but I hope it was worth your while
+           PPS, Please do not roast me in class I'm begging you
+           PPPS, I'm sorry for sleeping in class the other day I had only 2 hours of sleep
+           PPPPS, I hope this goes in to some world record or Stuy record for longest useful comment ever
+           PPPPPS, Now I actually hope you don't read this at all and you don't actually read our code when grading labs
+                   because it's getting ridiculously long and embarrassing
+        */
     }
     private int countH(int row, int col, int moveNumber) {
         if (moveNumber == board.length * board[0].length + 1) { //base case when you have completed the tour

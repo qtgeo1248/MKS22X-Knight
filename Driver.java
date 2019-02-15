@@ -108,15 +108,10 @@ public class Driver {
         System.out.println(test);
         System.out.println(total + "\n");
         test = new KnightBoard(1, 1);
-        total = test.countSolutions(0, 0);
-        System.out.println(total + "\n");
+        System.out.println(test.countSolutions(0, 0) + "\n");
         test = new KnightBoard(5, 5);
-        total = 0;
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                total += test.countSolutions(i, j);
-            }
-        }
-        System.out.println(total / 25 + "\n");
+        System.out.println(test.countSolutions(0, 0) + "\n");
+        test = new KnightBoard(3, 4);
+        System.out.println(test.countSolutions(0, 0) + "\n");
     }
 }
