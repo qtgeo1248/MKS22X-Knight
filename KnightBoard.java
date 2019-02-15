@@ -91,6 +91,15 @@ public class KnightBoard {
                 col < 0 || col >= board[0].length || //these test if the knight is out of board
                 board[row][col] != 0) { //this tests if the knight is moved to a place already stepped on
                 return 0;
+            } else {
+                int toReturn = solveH(row + 2, col - 1, moveNumber + 1) + //tests every possible
+                               solveH(row + 2, col + 1, moveNumber + 1) + //move of the knight
+                               solveH(row - 2, col - 1, moveNumber + 1) +
+                               solveH(row - 2, col + 1, moveNumber + 1) +
+                               solveH(row + 1, col - 2, moveNumber + 1) +
+                               solveH(row + 1, col + 2, moveNumber + 1) +
+                               solveH(row - 1, col - 2, moveNumber + 1) +
+                               solveH(row - 1, col + 2, moveNumber + 1);
             }
         }
         return 0; //temp
