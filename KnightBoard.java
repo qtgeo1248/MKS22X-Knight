@@ -74,4 +74,13 @@ public class KnightBoard {
             }
         }
     }
+
+    public int countSolutions(int startingRow, int startingCol) {
+        if (!isBlank){
+            throw new IllegalStateException();
+        } if (startingRow < 0 || startingCol < 0) {
+            throw new IllegalArgumentException();
+        }
+        return true; //temp
+    }
 }
