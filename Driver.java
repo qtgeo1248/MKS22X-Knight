@@ -117,6 +117,6 @@ public class Driver {
                 total += test.countSolutions(i, j);
             }
         }
-        System.out.println(total + "\n");
+        System.out.println(total / 25 + "\n");
     }
 }
