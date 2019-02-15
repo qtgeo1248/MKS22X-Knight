@@ -8,15 +8,15 @@ public class Driver {
         try {
             test = new KnightBoard(3, 0);
         } catch (IllegalArgumentException e) {
-            System.out.println("Exception Caught!\n");
+            System.out.println("Exception Caught1!\n");
         } try {
             test = new KnightBoard(-4, 3);
         } catch (IllegalArgumentException e) {
-            System.out.println("Exception Caught!\n");
+            System.out.println("Exception Caught2!\n");
         } try {
             test = new KnightBoard(0, -4);
         } catch (IllegalArgumentException e) {
-            System.out.println("Exception Caught!\n");
+            System.out.println("Exception Caught3!\n");
         }
 
         /*
@@ -56,25 +56,48 @@ public class Driver {
         try {
             test.solve(0, 0);
         } catch (IllegalStateException e) {
-            System.out.println("Exception Caught!\n");
+            System.out.println("Exception Caught4!\n");
         } try {
             test = new KnightBoard(5, 5);
             test.solve(0, 0);
             test.solve(0, 0);
         } catch (IllegalStateException e) {
-            System.out.println("Exception Caught!\n");
+            System.out.println("Exception Caught5!\n");
         } try {
             test = new KnightBoard(5, 5);
             test.solve(2, -4);
         } catch (IllegalArgumentException e) {
-            System.out.println("Exception Caught!\n");
+            System.out.println("Exception Caught6!\n");
         } try {
             test = new KnightBoard(5, 5);
-            test.solve(-4, 2);
+            test.solve(2, 5);
         } catch (IllegalArgumentException e) {
-            System.out.println("Exception Caught!\n");
+            System.out.println("Exception Caught7!\n");
         }
 
-        
+        try {
+            test.solve(0, 0);
+            test.countSolutions(0, 0);
+        } catch (IllegalStateException e) {
+            System.out.println("Exception Caught8!\n");
+        } try {
+            test = new KnightBoard(5, 5);
+            test.solve(0, 0);
+            test.countSolutions(0, 0);
+        } catch (IllegalStateException e) {
+            System.out.println("Exception Caught9!\n");
+        } try {
+            test = new KnightBoard(5, 5);
+            test.countSolutions(2, -4);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception Caught0!\n");
+        } try {
+            test = new KnightBoard(5, 5);
+            test.countSolutions(2, 5);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception Caught1!\n");
+        }
+
+
     }
 }
