@@ -106,12 +106,12 @@ public class Driver {
             }
         }
         System.out.println(test);
-        System.out.println(total + "\n");
+        System.out.println("3 by 3 all: " + total + "\n");
         test = new KnightBoard(1, 1);
-        System.out.println(test.countSolutions(0, 0) + "\n");
+        System.out.println("1 by 1, (0, 0): " + test.countSolutions(0, 0) + "\n");
         test = new KnightBoard(5, 5);
-        System.out.println(test.countSolutions(0, 0) + "\n"); //tested this case with THE Vincent Fongtastic
+        System.out.println("5 by 5, (0, 0): " + test.countSolutions(0, 0) + "\n"); //tested this case with THE Vincent Fongtastic
         test = new KnightBoard(3, 4);
-        System.out.println(test.countSolutions(0, 0) + "\n"); //tested this case with THE stuyVincent Fong
+        System.out.println("3 by 4, (0, 0): " + test.countSolutions(0, 0) + "\n"); //tested this case with THE stuyVincent Fong
     }
 }
