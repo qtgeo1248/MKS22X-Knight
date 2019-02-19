@@ -15,6 +15,7 @@ public class KnightBoard {
                 board[i][j] = 0;
             }
         }
+        OPTIONS = [2, -1, 2, 1, -2, -1, -2, 1, 1, -2, 1, 2, -1, -2, -1, 2];
     }
 
     public String toString() {
