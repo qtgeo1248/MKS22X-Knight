@@ -59,14 +59,10 @@ public class KnightBoard {
                 return false;
             } else {
                 board[row][col] = moveNumber;
-                boolean toReturn = solveH(row + 2, col - 1, moveNumber + 1) || //tests every possible
-                                   solveH(row + 2, col + 1, moveNumber + 1) || //move of the knight
-                                   solveH(row - 2, col - 1, moveNumber + 1) ||
-                                   solveH(row - 2, col + 1, moveNumber + 1) ||
-                                   solveH(row + 1, col - 2, moveNumber + 1) ||
-                                   solveH(row + 1, col + 2, moveNumber + 1) ||
-                                   solveH(row - 1, col - 2, moveNumber + 1) ||
-                                   solveH(row - 1, col + 2, moveNumber + 1);
+                boolean toReturn = false;
+                for (int i = 0; i < OPTIONS.length; i += 2) {
+                    toReturn = toReturn || solveH(row + OPTIONS[i], col + OPTIONS[i + 1], moveNumber + 1); //tests every possible move of the knight
+                }
                 if (!toReturn) {
                     board[row][col] = 0; //changes back to 0 if no possibilities
                 }
