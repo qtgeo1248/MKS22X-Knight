@@ -2,7 +2,7 @@ public class KnightBoard {
 
     private int[][] board;
     private boolean isBlank; //this records whether the board is nonempty or not
-    private static int[] OPTIONS;
+    private static int[] OPTIONS = {2, -1, 2, 1, -2, -1, -2, 1, 1, -2, 1, 2, -1, -2, -1, 2};
 
     public KnightBoard(int startingRows, int startingCols) {
         if (startingRows <= 0 || startingCols <= 0) {
@@ -15,7 +15,6 @@ public class KnightBoard {
                 board[i][j] = 0;
             }
         }
-        OPTIONS = [2, -1, 2, 1, -2, -1, -2, 1, 1, -2, 1, 2, -1, -2, -1, 2];
     }
 
     public String toString() {
