@@ -2,6 +2,7 @@ public class KnightBoard {
 
     private int[][] board;
     private boolean isBlank; //this records whether the board is nonempty or not
+    private static int[] OPTIONS;
 
     public KnightBoard(int startingRows, int startingCols) {
         if (startingRows <= 0 || startingCols <= 0) {
