@@ -120,14 +120,10 @@ public class KnightBoard {
                 return 0;
             } else {
                 board[row][col] = moveNumber;
-                int toReturn = countH(row + 2, col - 1, moveNumber + 1) + //tests every possible
-                               countH(row + 2, col + 1, moveNumber + 1) + //move of the knight
-                               countH(row - 2, col - 1, moveNumber + 1) +
-                               countH(row - 2, col + 1, moveNumber + 1) +
-                               countH(row + 1, col - 2, moveNumber + 1) +
-                               countH(row + 1, col + 2, moveNumber + 1) +
-                               countH(row - 1, col - 2, moveNumber + 1) +
-                               countH(row - 1, col + 2, moveNumber + 1);
+                int toReturn = 0;
+                for (int i = 0; i < OPTIONS.length; i += 2) {
+                    toReturn += countH(row + OPTIONS[i], col + OPTIONS[i + 1], moveNumber + 1); //tests every possible move of the knight
+                }
                 board[row][col] = 0; //after you finish all possibilities, backtrack
                 return toReturn; //changing isBlank is unnecessary
             }
