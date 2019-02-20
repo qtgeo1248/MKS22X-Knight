@@ -30,9 +30,10 @@ public class Moves {
         }
     }
     public static void main(String[] args) {
-        Moves test = new Moves(4, 3);
+        Moves test = new Moves(3, 7);
         for (int i = 0; i < test.grid.length; i++) {
             System.out.println(Arrays.toString(test.grid[i]));
         }
+        System.out.println();
     }
 }
