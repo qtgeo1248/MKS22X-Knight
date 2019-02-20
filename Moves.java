@@ -19,8 +19,10 @@ public class Moves {
         return count;
     }
 
-    public Moves(int numrows, int numcols) { //constructor makes all the moves in rows x cols board
-        grid = new int[rows][cols];
+    public Moves(int numRows, int numCols) { //constructor makes all the moves in rows x cols board
+        grid = new int[numRows][numCols];
+        rows = numRows;
+        cols = numCols;
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
 
