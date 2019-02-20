@@ -6,22 +6,30 @@ public class Moves {
         grid = new int[rows][cols];
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
-                if (i == 0) {
+                if (i == 0 || i == grid.length - 1) {
                     if (j == 0 || j == grid[i].length - 1) {
-                        grid[i][j] = 2; //this is corner
+                        grid[i][j] = 2; //this is 0,0
                     } else if (j == 1 || j == grid[i].length - 2) {
-                        grid[i][j] = 3; //this is near corner
+                        grid[i][j] = 3; //this is 0,1
                     } else {
-                        grid[i][j] = 4; //this is nonspecial edges
+                        grid[i][j] = 4; //this is 0,anythingelse
                     }
-                } else if (i == 1) {
-
-                } else if (i == grid.length - 1) {
-
-                } else if (i == grid.length) {
-
+                } else if (i == 1 || i == grid.length - 2) {
+                    if (j == 0 || j == grid[i].length - 1) {
+                        grid[i][j] = 3; //this is 1,0
+                    } else if (j == 1 || j == grid[i].length - 2) {
+                        grid[i][j] = 4; //this is 1,1
+                    } else {
+                        grid[i][j] = 6; //this is 1,anythingelse
+                    }
                 } else {
-
+                    if (j == 0 || j == grid[i].length - 1) {
+                        grid[i][j] = 4; //this is 2,0
+                    } else if (j == 1 || j == grid[i].length - 2) {
+                        grid[i][j] = 6; //this is 2,1
+                    } else {
+                        grid[i][j] = 8; //this is 2,anythingelse
+                    }
                 }
             }
         }
