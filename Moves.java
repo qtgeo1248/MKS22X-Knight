@@ -5,13 +5,13 @@ public class Moves {
     public int[][] grid; //make private later
     private int rows;
     private int cols;
+    private int[] OPTIONS = {2, -1, 2, 1, -2, -1, -2, 1, 1, -2, 1, 2, -1, -2, -1, 2};
 
     private int totalBeginning(int row, int col) { //function that determines number of moves
-        int[] options = {2, -1, 2, 1, -2, -1, -2, 1, 1, -2, 1, 2, -1, -2, -1, 2};
         int count = 0;
-        for (int i = 0; i < options.length; i += 2) {
-            int newRow = row + options[i];
-            int newCol = col + options[i + 1];
+        for (int i = 0; i < OPTIONS.length; i += 2) {
+            int newRow = row + OPTIONS[i];
+            int newCol = col + OPTIONS[i + 1];
             if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols) {
                 count++;
             }
@@ -27,6 +27,24 @@ public class Moves {
             for (int j = 0; j < grid[i].length; j++) {
                 grid[i][j] = totalBeginning(i, j);
             }
+        }
+    }
+
+    public boolean addK(int row, int col) { //adds the knight and updates the grid.
+        if (grid[row][col] == 9) {
+            return false;
+        } else {
+            for (int i = 0; i < OPTIONS.length; i += 2) {
+                int newRow = row + OPTIONS[i];
+                int newCol = col + OPTIONS[i + 1];
+                if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols) {
+                    if (grid[newRow][newCol] != 9) {
+                        grid[newRow][newCol]--;
+                    }
+                }
+            }
+            grid[row][col] = 9;
+            return true;
         }
     }
     public static void main(String[] args) {
