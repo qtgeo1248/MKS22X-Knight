@@ -72,24 +72,22 @@ public class Moves {
 
     public int[] bestOption(int row, int col) { //returns the optimal moves to go to
         ArrayList<Option> options = new ArrayList<Option>();
-        int count = 0;
         for (int i = 0; i < OPTIONS.length; i += 2) {
             int newRow = row + OPTIONS[i];
             int newCol = col + OPTIONS[i + 1];
             if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols) {
                 if (grid[newRow][newCol] != -1) {
                     options.add(new Option(OPTIONS[i], OPTIONS[i + 1], grid[newRow][newCol]));
-                    count++;
                 }
             }
         }
         Collections.sort(options);
-        int[] ans = new int[count * 2];
-        for (int i = 0; i < options.length; i++) {
+        int[] ans = new int[options.size() * 2];
+        for (int i = 0; i < options.size(); i++) {
             ans[2 * i] = options.get(i).getRowInc();
             ans[2 * i + 1] = options.get(i).getColInc();
         }
-        return true;
+        return ans;
 
     }
     public static void main(String[] args) {
