@@ -7,7 +7,7 @@ public class Moves {
     public int[][] grid; //make private later
     private int rows;
     private int cols;
-    private int[] OPTIONS = {2, -1, 2, 1, -2, -1, -2, 1, 1, -2, 1, 2, -1, -2, -1, 2};
+    private int[] OPTIONS = {2, -1, 2, 1, -2, -1, -2, 1, 1, -2, 1, 2, -1, -2, -1, 2}; //they come in pairs, first is row inc., second is col inc.
 
     private int totalBeginning(int row, int col) { //function that determines number of moves
         int count = 0;
@@ -85,6 +85,10 @@ public class Moves {
         }
         Collections.sort(options);
         int[] ans = new int[count * 2];
+        for (int i = 0; i < options.length; i++) {
+            ans[2 * i] = options.get(i).getRowInc();
+            ans[2 * i + 1] = options.get(i).getColInc();
+        }
         return true;
 
     }
