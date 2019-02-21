@@ -75,6 +75,8 @@ public class Moves {
         System.out.println();
         test.addK(0, 0);
         test.addK(2, 1);
+        test.removeK(2, 1);
+        test.removeK(0, 0);
         for (int i = 0; i < test.grid.length; i++) {
             System.out.println(Arrays.toString(test.grid[i]));
         }
