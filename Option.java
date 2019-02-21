@@ -8,6 +8,10 @@ public class Option implements Comparable<Option> {
         val = newVal;
     }
 
+    public int getVal() {
+        return val;
+    }
+
     public int compareTo(Option other) {
         return 0;
     }
