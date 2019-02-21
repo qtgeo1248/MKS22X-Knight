@@ -1,7 +1,11 @@
 public class Option implements Comparable<Option> {
 
-    public Option() {
-        
+    private int rowInc, colInc, val;
+
+    public Option(int rowPlus, int colPlus, int newVal) {
+        rowInc = rowPlus;
+        colInc = colPlus;
+        val = newVal;
     }
 
     public int compareTo(Option other) {
