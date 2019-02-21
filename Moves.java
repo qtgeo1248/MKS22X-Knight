@@ -71,7 +71,23 @@ public class Moves {
     }
 
     public ArrayList<Integer> bestOption(int row, int col) { //returns the optimal moves to go to
-        return new ArrayList<Integer>();
+        if (grid[row][col] != -1) {
+            return false;
+        } else {
+            int count = 0;
+            for (int i = 0; i < OPTIONS.length; i += 2) {
+                int newRow = row + OPTIONS[i];
+                int newCol = col + OPTIONS[i + 1];
+                if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols) {
+                    if (grid[newRow][newCol] != -1) {
+                        grid[newRow][newCol]++;
+                        count++;
+                    }
+                }
+            }
+            grid[row][col] = count;
+            return true;
+        }
     }
     public static void main(String[] args) {
         Moves test = new Moves(5, 5);
