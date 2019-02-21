@@ -70,7 +70,7 @@ public class Moves {
         }
     }
 
-    public ArrayList<Integer> bestOption(int row, int col) { //returns the optimal moves to go to
+    public int[] bestOption(int row, int col) { //returns the optimal moves to go to
         ArrayList<Option> options = new ArrayList<Option>();
         int count = 0;
         for (int i = 0; i < OPTIONS.length; i += 2) {
@@ -83,7 +83,8 @@ public class Moves {
                 }
             }
         }
-        grid[row][col] = count;
+        Collections.sort(options);
+        int[] ans = new int[count * 2];
         return true;
 
     }
