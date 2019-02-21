@@ -48,11 +48,16 @@ public class Moves {
         }
     }
     public static void main(String[] args) {
-        Moves test = new Moves(3, 4);
+        Moves test = new Moves(5, 5);
         for (int i = 0; i < test.grid.length; i++) {
             System.out.println(Arrays.toString(test.grid[i]));
         }
         System.out.println();
         test.addK(0, 0);
+        test.addK(2, 1);
+        for (int i = 0; i < test.grid.length; i++) {
+            System.out.println(Arrays.toString(test.grid[i]));
+        }
+        System.out.println();
     }
 }
