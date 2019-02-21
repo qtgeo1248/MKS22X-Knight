@@ -2,6 +2,7 @@ public class KnightBoard {
 
     private int[][] board;
     private boolean isBlank; //this records whether the board is nonempty or not
+    private Moves allPossMoves;
     private static int[] OPTIONS = {2, -1, 2, 1, -2, -1, -2, 1, 1, -2, 1, 2, -1, -2, -1, 2};
 
     public KnightBoard(int startingRows, int startingCols) {
@@ -15,6 +16,7 @@ public class KnightBoard {
                 board[i][j] = 0;
             }
         }
+        allPossMoves = new Moves(startingRows, startingCols);
     }
 
     public String toString() {
