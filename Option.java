@@ -11,6 +11,9 @@ public class Option implements Comparable<Option> {
     public int getVal() {
         return val;
     }
+    public int getRowInc() {
+        return rowInc;
+    }
 
     public int compareTo(Option other) {
         return 0;
