@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Moves {
 
@@ -66,6 +68,10 @@ public class Moves {
             grid[row][col] = count;
             return true;
         }
+    }
+
+    public ArrayList<Integer> bestOption(int row, int col) { //returns the optimal moves to go to
+        return new ArrayList<Integer>();
     }
     public static void main(String[] args) {
         Moves test = new Moves(5, 5);
