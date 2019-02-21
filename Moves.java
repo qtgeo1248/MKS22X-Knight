@@ -57,6 +57,10 @@ public class Moves {
                 int newRow = row + OPTIONS[i];
                 int newCol = col + OPTIONS[i + 1];
                 if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols) {
+                    if (grid[newRow][newCol] != -1) {
+                        grid[newRow][newCol]++;
+                        count++;
+                    }
                 }
             }
             grid[row][col] = count;
