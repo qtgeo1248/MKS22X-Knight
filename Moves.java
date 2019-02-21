@@ -53,6 +53,14 @@ public class Moves {
             return false;
         } else {
             int count = 0;
+            for (int i = 0; i < OPTIONS.length; i += 2) {
+                int newRow = row + OPTIONS[i];
+                int newCol = col + OPTIONS[i + 1];
+                if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols) {
+                }
+            }
+            grid[row][col] = count;
+            return true;
         }
     }
     public static void main(String[] args) {
