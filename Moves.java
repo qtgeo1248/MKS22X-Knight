@@ -4,7 +4,7 @@ import java.util.Collections;
 
 public class Moves {
 
-    public int[][] grid; //make private later
+    private int[][] grid;
     private int rows;
     private int cols;
     private int[] OPTIONS = {2, -1, 2, 1, -2, -1, -2, 1, 1, -2, 1, 2, -1, -2, -1, 2}; //they come in pairs, first is row inc., second is col inc.
