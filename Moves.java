@@ -78,7 +78,7 @@ public class Moves {
             int newCol = col + OPTIONS[i + 1];
             if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols) {
                 if (grid[newRow][newCol] != -1) {
-                    grid[newRow][newCol]++;
+                    options.add(new Option(OPTIONS[i], OPTIONS[i + 1], grid[newRow][newCol]));
                     count++;
                 }
             }
