@@ -47,6 +47,14 @@ public class Moves {
             return true;
         }
     }
+
+    public boolean removeK(int row, int col) { //removes the knight and updates the grid
+        if (grid[row][col] != -1) {
+            return false;
+        } else {
+            int count = 0;
+        }
+    }
     public static void main(String[] args) {
         Moves test = new Moves(5, 5);
         for (int i = 0; i < test.grid.length; i++) {
