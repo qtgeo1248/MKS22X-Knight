@@ -22,6 +22,6 @@ public class Option implements Comparable<Option> {
     }
 
     public int compareTo(Option other) {
-        return 0;
+        return getVal() - other.getVal();
     }
 }
