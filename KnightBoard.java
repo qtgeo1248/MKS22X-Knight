@@ -62,9 +62,10 @@ public class KnightBoard {
             } else {
                 board[row][col] = moveNumber;
                 allPossMoves.addK(row, col); //updates the moves board
+                int[] options = allPossMoves.bestOptions();
                 boolean toReturn = false;
                 for (int i = 0; i < OPTIONS.length; i += 2) {
-                    toReturn = toReturn || solveH(row + OPTIONS[i], col + OPTIONS[i + 1], moveNumber + 1); //tests every possible move of the knight
+                    toReturn = toReturn || solveH(row + options[i], col + options[i + 1], moveNumber + 1); //tests every possible move of the knight
                 }
                 if (!toReturn) {
                     board[row][col] = 0; //changes back to 0 if no possibilities
