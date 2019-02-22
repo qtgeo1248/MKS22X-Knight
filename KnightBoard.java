@@ -130,6 +130,9 @@ public class KnightBoard {
             } else {
                 board[row][col] = moveNumber;
                 int toReturn = 0;
+                if (moveNumber == board.length * board[0].length) {
+                    toReturn = 1; //reason is same as above (in solveH)
+                }
                 for (int i = 0; i < OPTIONS.length; i += 2) {
                     toReturn += countH(row + OPTIONS[i], col + OPTIONS[i + 1], moveNumber + 1); //tests every possible move of the knight
                 }
