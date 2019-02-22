@@ -135,8 +135,8 @@ public class KnightBoard {
                 if (moveNumber == board.length * board[0].length) {
                     toReturn = 1; //reason is same as above (in solveH)
                 }
-                for (int i = 0; i < OPTIONS.length; i += 2) {
-                    toReturn += countH(row + OPTIONS[i], col + OPTIONS[i + 1], moveNumber + 1); //tests every possible move of the knight
+                for (int i = 0; i < options.length; i += 2) {
+                    toReturn += countH(row + options[i], col + options[i + 1], moveNumber + 1); //tests every possible move of the knight
                 }
                 board[row][col] = 0; //after you finish all possibilities, backtrack
                 allPossMoves.removeK(row, col); //updates the moves board
