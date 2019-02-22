@@ -130,6 +130,8 @@ public class KnightBoard {
             } else {
                 board[row][col] = moveNumber;
                 int toReturn = 0;
+                allPossMoves.addK(row, col); //updates the moves board
+                int[] options = allPossMoves.bestOptions(row, col);
                 if (moveNumber == board.length * board[0].length) {
                     toReturn = 1; //reason is same as above (in solveH)
                 }
@@ -137,6 +139,7 @@ public class KnightBoard {
                     toReturn += countH(row + OPTIONS[i], col + OPTIONS[i + 1], moveNumber + 1); //tests every possible move of the knight
                 }
                 board[row][col] = 0; //after you finish all possibilities, backtrack
+                allPossMoves.removeK(row, col); //updates the moves board
                 return toReturn; //changing isBlank is unnecessary
             }
         }
