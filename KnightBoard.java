@@ -2,7 +2,7 @@ public class KnightBoard {
 
     private int[][] board;
     private boolean isBlank; //this records whether the board is nonempty or not
-    private Moves allPossMoves;
+    private Moves allPossMoves; //this records all the possible outgoiong moves
     private static int[] OPTIONS = {2, -1, 2, 1, -2, -1, -2, 1, 1, -2, 1, 2, -1, -2, -1, 2};
 
     public KnightBoard(int startingRows, int startingCols) {
@@ -61,12 +61,14 @@ public class KnightBoard {
                 return false;
             } else {
                 board[row][col] = moveNumber;
+                allPossMoves.addK(row, col); //updates the moves board
                 boolean toReturn = false;
                 for (int i = 0; i < OPTIONS.length; i += 2) {
                     toReturn = toReturn || solveH(row + OPTIONS[i], col + OPTIONS[i + 1], moveNumber + 1); //tests every possible move of the knight
                 }
                 if (!toReturn) {
                     board[row][col] = 0; //changes back to 0 if no possibilities
+                    allPossMoves.removeK(row, col); //updates the moves board
                 }
                 isBlank = !toReturn; //changes isblank for the tostring
                 return toReturn;
