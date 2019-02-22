@@ -70,7 +70,7 @@ public class Moves {
         }
     }
 
-    public int[] bestOption(int row, int col) { //returns the optimal moves to go to
+    public int[] bestOptions(int row, int col) { //returns the optimal moves to go to
         ArrayList<Option> options = new ArrayList<Option>();
         for (int i = 0; i < OPTIONS.length; i += 2) {
             int newRow = row + OPTIONS[i];
