@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class KnightBoard {
 
     private int[][] board;
@@ -63,6 +65,7 @@ public class KnightBoard {
                 board[row][col] = moveNumber;
                 allPossMoves.addK(row, col); //updates the moves board
                 int[] options = allPossMoves.bestOptions(row, col);
+                System.out.println(options);
                 boolean toReturn = false;
                 for (int i = 0; i < OPTIONS.length; i += 2) {
                     toReturn = toReturn || solveH(row + options[i], col + options[i + 1], moveNumber + 1); //tests every possible move of the knight
