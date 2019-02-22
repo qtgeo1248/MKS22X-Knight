@@ -94,7 +94,7 @@ public class KnightBoard {
         if (board.length == 1 && board[0].length == 1) {
             return 1;
         }
-        return countH(startingRow, startingRow, 1) / 8;
+        return countH(startingRow, startingRow, 1);
         /* okay so be prepared for the longest comment you ever read MR. KONSTANTINOVICH because it's
            about to be THE longest comment ever so here's the mathematical reason why I divide by 8:
            whenever I reach the last step of a VALID TOUR, I call the recursive step one more time.
@@ -117,6 +117,9 @@ public class KnightBoard {
            PPPPPS, Now I actually hope you don't read this at all and you don't actually read our code when grading labs
                    because it's getting ridiculously long and embarrassing
            PPPPPPS, Happy Valentine's Day!! (as of the time I wrote this comment)
+           PPPPPPPS, okay so here is the reason why this comment is useless now: so my optimization automatically lets you stop
+                     at the right place, so it doesn't go beyond the last step, but stops and returns 1, so that's great I guess,
+                     but now you have read all this for nothing :)
         */
     }
     private int countH(int row, int col, int moveNumber) {
