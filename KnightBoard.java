@@ -23,7 +23,7 @@ public class KnightBoard {
 
     public String toString() {
         String ans = "";
-        if (!isBlank) { //this does the case when the board is blank
+        if (isBlank) { //this does the case when the board is blank
             for (int i = 0; i < board.length; i++) {
                 for (int j = 0; j < board[i].length; j++) {
                     ans += "__ ";
@@ -54,7 +54,7 @@ public class KnightBoard {
         return solveH(startingRow, startingCol, 1);
     }
     private boolean solveH(int row, int col, int moveNumber) {
-        if (moveNumber == board.length * board[0].length) { //base case when you have completed tour
+        if (moveNumber == board.length * board[0].length + 1) { //base case when you have completed tour
             return true;
         } else {
             if (row < 0 || row >= board.length ||
@@ -65,12 +65,13 @@ public class KnightBoard {
                 board[row][col] = moveNumber;
                 allPossMoves.addK(row, col); //updates the moves board
                 int[] options = allPossMoves.bestOptions(row, col);
-                boolean toReturn = false;
-                if (moveNumber == board.length * board[0].length) {
-                    for (int i = 0; i < OPTIONS.length; i += 2) {
-                        toReturn = toReturn || solveH(row + OPTIONS[i], col + OPTIONS[i + 1], moveNumber + 1); //tests every possible move of the knight
-                    }
-                }
+                boolean toReturn = moveNumber == board.length * board[0].length;
+                /*
+                Hellow, Mr. KONSTANTINOVICH. Here is the reason I set toReturn to this thingy instead of
+                true: there is a situation in my code where at the very last step, options will have length
+                0. However, this will cause the entire thing to be false, since the for loop below will not run.
+                So I accomodated this situation using this weird boolean thingy.
+                */
                 for (int i = 0; i < options.length; i += 2) {
                     toReturn = toReturn || solveH(row + options[i], col + options[i + 1], moveNumber + 1); //tests every possible move of the knight
                 }
