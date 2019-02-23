@@ -47,11 +47,9 @@ public class Driver {
         test = new KnightBoard(3, 4);
         System.out.println(test.solve(0, 0));
         System.out.println(test + "\n");
-        /* this is literally too long to keep testing everytime
-        test = new KnightBoard(8, 5);
+        test = new KnightBoard(7, 14);
         System.out.println(test.solve(4, 2));
         System.out.println(test + "\n");
-        */
 
         try {
             test.solve(0, 0);
