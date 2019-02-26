@@ -47,9 +47,6 @@ public class Driver {
         test = new KnightBoard(3, 4);
         System.out.println(test.solve(0, 0));
         System.out.println(test + "\n");
-        test = new KnightBoard(7, 14);
-        System.out.println(test.solve(4, 2));
-        System.out.println(test + "\n");
 
         try {
             test.solve(0, 0);
@@ -111,5 +108,19 @@ public class Driver {
         System.out.println("5 by 5, (0, 0): " + test.countSolutions(0, 0) + "\n"); //tested this case with THE Vincent Fongtastic
         test = new KnightBoard(3, 4);
         System.out.println("3 by 4, (0, 0): " + test.countSolutions(0, 0) + "\n"); //tested this case with THE stuyVincent Fong
+
+        //slow stuff
+        test = new KnightBoard(7, 14);
+        System.out.println(test.solve(4, 2));
+        System.out.println(test + "\n");
+        test = new KnightBoard(10, 10);
+        System.out.println(test.solve(4, 2));
+        System.out.println(test + "\n");
+        test = new KnightBoard(10, 9);
+        System.out.println(test.solve(4, 2));
+        System.out.println(test + "\n");
+        test = new KnightBoard(8, 10);
+        System.out.println(test.solve(4, 5));
+        System.out.println(test + "\n");
     }
 }
