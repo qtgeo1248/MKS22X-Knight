@@ -117,7 +117,8 @@ public class KnightBoard {
            PPPPPS, Now I actually hope you don't read this at all and you don't actually read our code when grading labs
                    because it's getting ridiculously long and embarrassing
            PPPPPPS, Happy Valentine's Day!! (as of the time I wrote this comment)
-           PPPPPPPS, okay so here is the reason why this comment is useless now: so my optimization automatically lets you stop
+
+           PPPPPPPS, okay so here is the reason why this comment is useless now: so my new code automatically lets you stop
                      at the right place, so it doesn't go beyond the last step, but stops and returns 1, so that's great I guess,
                      but now you have read all this for nothing :)
         */

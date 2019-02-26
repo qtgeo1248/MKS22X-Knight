@@ -25,6 +25,7 @@ public class Driver {
         test.isBlank = false;
         System.out.println(test + "\n");
         */
+        
         test = new KnightBoard(5, 5);
         System.out.println(test.solve(0, 0));
         //System.out.println("isBlank " + test.isBlank);
